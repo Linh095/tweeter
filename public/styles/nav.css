@@ -1,0 +1,30 @@
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+  background-color: #4056A1;
+  color: #FFFF ;
+  padding: 1.5em;
+  display: inline-flex;
+  justify-content: space-between;
+}
+
+nav span {
+  font-family: 'Bungee', cursive;
+}
+nav div {
+  width: fit-content;
+  margin: 0;
+  position: relative;
+}
+nav p {
+  margin: 0 0 0.5em 0;
+  width: 100%;
+}
+nav i {
+  display: inline-block;
+  position: absolute;
+  right: 50%;
+  transform: translate(50%)
+}
