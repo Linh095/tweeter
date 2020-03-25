@@ -31,7 +31,8 @@ font-family: 'Source Sans Pro', sans-serif;-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
   <!-- App JS -->
-  <script type="text/javascript" src="/scripts/client.js"></script>
+  <script type="module" src="/scripts/client.js"></script>
+  <script type="module" src="/scripts/composer-char-counter.js"></script>
 
 </head>
 
@@ -62,9 +63,12 @@ font-family: 'Source Sans Pro', sans-serif;-->
           <textarea name="text" id="tweet-text"></textarea>
           <div>
             <button type="submit">Tweet</button>
-            <output name="counter" class="counter" for="tweet-text"><strong>140</strong></output>
+            <output name="counter" class="counter" for="tweet-text" value=characterCounter()></output>
           </div>
         </form>
+      </section>
+      <section id="all-tweets">
+        <!-- all tweets will be injected here -->
       </section>
     </div>
   </main>
