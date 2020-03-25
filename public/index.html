@@ -63,7 +63,7 @@ font-family: 'Source Sans Pro', sans-serif;-->
           <textarea name="text" id="tweet-text"></textarea>
           <div>
             <button type="submit">Tweet</button>
-            <output name="counter" class="counter" for="tweet-text" value=characterCounter()></output>
+            <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
         </form>
       </section>
@@ -72,24 +72,7 @@ font-family: 'Source Sans Pro', sans-serif;-->
       </section>
     </div>
   </main>
-  <script>
-    // document.addEventListener("dblclick", (event) => {
-    //   console.log(event + "fuck you");
-    // });
-    const text_input = document.querySelector("textarea");
-    text_input.addEventListener("compositionstart", (event) => {
-      alert("composition has started");
-    });
 
-    text_input.addEventListener("compositionupdate", (event) => {
-      alert("composition has been updated");
-    });
-
-    text_input.addEventListener("compositionend", (event) => {
-      alert("composition has been completed or cancled");
-    });
-
-  </script>
 </body>
 
 </html>

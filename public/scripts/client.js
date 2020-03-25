@@ -11,8 +11,3 @@ const onReady = () => {
 };
 // Run when page is ready
 $(document).ready(onReady);
-
-// modules.exports = {}
-
-// export { funcOne, varOne, FuncTwo }
-// export default funcOne;
