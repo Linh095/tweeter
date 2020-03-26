@@ -22,7 +22,7 @@ font-family: 'Source Sans Pro', sans-serif;-->
   <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
   <link rel="stylesheet" href="/styles/header.css" type="text/css" />
   <link rel="stylesheet" href="/styles/new_tweet.css" type="text/css" />
-
+  <link rel="stylesheet" href="/styles/display_tweet.css" type="text/css" />
 
   <!-- font awesome icons -->
   <script src="https://kit.fontawesome.com/948f369b19.js" crossorigin="anonymous"></script>
@@ -57,7 +57,6 @@ font-family: 'Source Sans Pro', sans-serif;-->
   <main>
     <div class="wrapper">
       <section class="new-tweet">
-        <h2>Compose Tweet</h2>
         <form action="/tweets" method="POST" class="new_tweet">
           <label for="tweet-text"><strong>What are you humming about?</strong></label>
           <textarea name="text" id="tweet-text"></textarea>
@@ -69,6 +68,24 @@ font-family: 'Source Sans Pro', sans-serif;-->
       </section>
       <section id="all-tweets">
         <!-- all tweets will be injected here -->
+        <article class="display-tweet">
+          <header>
+            <div>
+              <img src="/images/profile-hex.png" alt="cartoon profile of a girl with long hair wearing a t-shirt">
+              <p>Linh</p>  
+            </div>
+            <a class="emphasis">@lnguyen</a>
+          </header>
+          <p>This is my tweet: i hate this app!</p>
+          <footer>
+            <h6 class="days-tweet">10 days ago</h6>
+            <div class="social-icons">
+              <i class="fab fa-font-awesome-flag"></i>
+              <i class="fas fa-retweet"></i>
+              <i class="fas fa-heart"></i>
+            </div>
+          </footer>
+        </article>
       </section>
     </div>
   </main>
