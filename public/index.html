@@ -57,7 +57,7 @@ font-family: 'Source Sans Pro', sans-serif;-->
   <main>
     <div class="wrapper">
       <section class="new-tweet">
-        <form action="/tweets" method="POST" class="new_tweet">
+        <form action="index.html" id="new_tweet_form" class="new_tweet">
           <label for="tweet-text"><strong>What are you humming about?</strong></label>
           <textarea name="text" id="tweet-text"></textarea>
           <div>
@@ -66,14 +66,14 @@ font-family: 'Source Sans Pro', sans-serif;-->
           </div>
         </form>
       </section>
-      <section id="all-tweets">
+      <section id="tweet-container">
         <!-- all tweets will be injected here -->
         <article class="display-tweet">
           <a class="handle">@lnguyen</a>
           <header>
             <div>
               <img src="/images/profile-hex.png" alt="cartoon profile of a girl with long hair wearing a t-shirt">
-              <p>Linh</p>  
+              <p class="name">Linh</p>  
             </div>
           </header>
           <p>This is my tweet: i hate this app!</p>
