@@ -4,15 +4,19 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
 }
-.display-tweet p {
-  align-self: flex-start;
-  font-size: 30px;
-  margin-left: 5%;
+
+a {
+  position: absolute;
+  top: 20%;
+  right: 10%;
+  z-index: 3;
+  color: #f4f1ec;
 }
-.display-tweet header {
+.display-tweet header{
   color: #545149;
-  background-color: #f4f1ec;
+  background-color:#f4f1ec ;
   font-size: 24px;
   font-family: 'Source Sans Pro', sans-serif;
   display: inline-flex;
@@ -21,6 +25,20 @@
   height: auto;
   max-width: 90%;
   margin: 4% 4% 0 4%;
+}
+
+.display-tweet:hover {
+  border: #545149 solid 6px;
+  font-weight: 700;
+  box-shadow: 10px 10px rgb(173, 185, 229);
+}
+.display-tweet:hover>a {
+  color: rgb(156, 162, 187);
+}
+.display-tweet p {
+  align-self: flex-start;
+  font-size: 30px;
+  margin-left: 5%;
 }
 
 .display-tweet div {
