@@ -20,7 +20,7 @@ const createTweetElement = function (tweetData) {
           <p>${user.name}</p> 
         </div>
       </header>
-      <p>${content.text}</p>
+      <p>${escape(content.text)}</p>
       <footer>
         <h6 class="days-tweet">${days} days ago</h6>
         <div class="social-icons">
@@ -32,13 +32,18 @@ const createTweetElement = function (tweetData) {
     </article>
     `;
   return markup;
-}
+};
 
 //calculate ethe difference between current time and time tweet was created
 const daysAgoTweet = function (time_created) {
   const difference = Date.now() - time_created;
   const daysDifference = Math.floor(difference / 1000 / 60 / 60 / 24);
   return daysDifference;
+};
+const escape =  function(str) {
+  let div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
 }
 
 //formats tweet from text entered into the new_tweet form
@@ -52,12 +57,12 @@ const formatTweetByLinh = function (text) {
       "handle": "@lnguyen"
     },
     "content": {
-      "text": text
+      "text": escape(text)
     },
     "created_at": dateCreated
   }
   return tweet_data;
-}
+};
 
 const checkValidText = function (text) {
   if (!text) {
@@ -67,7 +72,7 @@ const checkValidText = function (text) {
   } else {
     return true;
   }
-}
+};
 
 const addNewTweet = function () {
   $('#new_tweet_form').submit(function (event) {
@@ -77,23 +82,13 @@ const addNewTweet = function () {
     if (checkValidText(new_tweet)) {
       const formated_object = formatTweetByLinh(new_tweet);
       const html_element = createTweetElement(formated_object);
-      $('#tweet-container').append(html_element);
+      $('#new_tweet_form')[0].reset();
+      $('#tweet-container').prepend(html_element);
     } else {
       alert("You're tweet is too long or too short. Tweet again!");
     }
   });
-}
-
-// $('#new_tweet_form').submit(function (event) {
-//   event.preventDefault();
-//   const serializedArray = $(this).serializeArray();
-//   const tweet_html = addNewTweet(serializedArray);
-//   if (tweet_html) {
-//     $('#tweet-container').append(tweet_html);
-//   } else {
-//     alert("You're tweet is too long or too short. Tweet again!");
-//   }
-// });
+};
 
 //adds tweet to tweet-container part of homepage
 const renderTweets = function (data) {
@@ -103,7 +98,7 @@ const renderTweets = function (data) {
     markupArray.push(tweet_html);
   }
   return markupArray.join("");
-}
+};
 
 //FETCHING TWEETS FROM DATABASE
 const loadTweets = function () {
@@ -111,7 +106,7 @@ const loadTweets = function () {
     const tweets = renderTweets(data);
     $('#tweet-container').append(tweets);
   });
-}
+};
 
 //LOAD EVENT LISTENERS
 const onReady = () => {
