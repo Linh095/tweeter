@@ -65,17 +65,20 @@ const formatTweetByLinh = function(text_object) {
 }
 
 //adds tweet to tweet-container part of homepage
-const renderTweets = function(tweet_data) {
-  const tweet = createTweetElement(tweet_data);
-  $('#tweet-container').append(tweet);
+const renderTweets = function(data) {
+  let markupArray = [];
+  for (const tweet of data) {
+    const tweet_html = createTweetElement(tweet);
+    markupArray.push(tweet_html);
+  }
+  return markupArray.join("");
 }
 
 //FETCHING TWEETS FROM DATABASE
 const loadTweets = function(){
   $.get("/tweets", function(data){
-    for (const tweet of data) {
-      renderTweets(tweet);
-    }
+    const tweets = renderTweets(data);
+    $('#tweet-container').append(tweets);
   });
 }
 loadTweets();
