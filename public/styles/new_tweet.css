@@ -34,3 +34,13 @@
 .over {
   color: brown;
 }
+
+.error-message {
+  display: none;
+}
+.error {
+  display: inline-block;
+  margin: 0.3em 0 0.5em 0;
+  color: brown;
+  font-weight: 500;
+}

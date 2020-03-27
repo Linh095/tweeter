@@ -80,12 +80,13 @@ const addNewTweet = function () {
     const data = $(this).serializeArray();
     const new_tweet = data[0].value;
     if (checkValidText(new_tweet)) {
+      $('.error-message').removeClass("error");
       const formated_object = formatTweetByLinh(new_tweet);
       const html_element = createTweetElement(formated_object);
       $('#new_tweet_form')[0].reset();
       $('#tweet-container').prepend(html_element);
     } else {
-      alert("You're tweet is too long or too short. Tweet again!");
+      $('.error-message').addClass("error");
     }
   });
 };
