@@ -45,7 +45,7 @@ const daysAgoTweet = function (time_created) {
 }
 
 //formats tweet from text entered into the new_tweet form
-const formatTweet = function(text_object) {
+const formatTweetByLinh = function(text_object) {
   const dateCreated = Date.now(); //returns 13 digit timestamp
   const text = text_object[0].value;
   console.log("data value", text);
@@ -65,32 +65,22 @@ const formatTweet = function(text_object) {
 }
 
 //adds tweet to tweet-container part of homepage
-const appendNewTweet = function(tweet_data) {
-  const tweetFormatted = formatTweet(tweet_data);
-  const tweet = createTweetElement(tweetFormatted);
+const renderTweets = function(tweet_data) {
+  const tweet = createTweetElement(tweet_data);
   $('#tweet-container').append(tweet);
 }
 
-
-//example data will have to replace with method from getting stuff from database
-const exampleTweetData = {
-  "user": {
-    "name": "Newton",
-    "avatars": "https://i.imgur.com/73hZDYK.png",
-    "handle": "@SirIsaac"
-  },
-  "content": {
-    "text": "If I have seen further it is by standing on the shoulders of giants"
-  },
-  "created_at": 1461116232227
-};
-//adding example tweet to the page
-const $tweet = createTweetElement(exampleTweetData);
-$('#tweet-container').append($tweet);
-
+//FETCHING TWEETS FROM DATABASE
+const loadTweets = function(){
+  $.get("/tweets", function(data){
+    for (const tweet of data) {
+      renderTweets(tweet);
+    }
+  });
+}
+loadTweets();
 
 //EVENT LISTENERS
-
 // Run when page is ready
 $(document).ready(onReady);
 
