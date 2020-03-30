@@ -20,13 +20,38 @@ body {
   font-size: 24px;
   font-family: 'Source Sans Pro', sans-serif;
 }
-
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
-
+.top-panel {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 7% 0 7% 0;
+  margin-right: 15%;
+  margin-left: 15%;
+}
 .wrapper {
-  margin-right: 15%; /*it looks better than the 10% required*/
+  margin-right: 15%;
   margin-left: 15%;
   align-self: center;
+}
+
+/* MEDIA QUERIES FOR RESPONSIVE DESIGN */
+
+@media (max-width: 900px) {
+  nav {
+    background-color: goldenrod;
+  }
+  .top-panel {
+    width: 100%;
+    flex-direction: column;
+    margin: 0;
+  }
+  .top-header {
+    max-width: 100%;
+    margin-top: 0;
+  }
+  .new_tweet{
+    margin-left: 10%;
+    margin-right: 10%;
+    max-width: 100%;
+    align-self: center;
+  }
 }

@@ -28,3 +28,9 @@ nav i {
   right: 50%;
   transform: translate(50%)
 }
+
+@media (max-width: 800px) {
+  nav {
+    background-color: goldenrod;
+  }
+}

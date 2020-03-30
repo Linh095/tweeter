@@ -11,6 +11,7 @@
 
   <!-- personal snippet -->
   <link rel="stylesheet" href="/styles/personal_snippet.css" type="text/css" />
+  <meta name="viewport" content="width=divice-width, initial-scale=1.0" />
 
   <!-- external font import font-family: 'Bungee', cursive;
 font-family: 'Source Sans Pro', sans-serif;-->
@@ -18,11 +19,11 @@ font-family: 'Source Sans Pro', sans-serif;-->
     rel="stylesheet">
 
   <!-- App CSS -->
-  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
   <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
   <link rel="stylesheet" href="/styles/header.css" type="text/css" />
   <link rel="stylesheet" href="/styles/new_tweet.css" type="text/css" />
   <link rel="stylesheet" href="/styles/display_tweet.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
 
   <!-- font awesome icons -->
   <script src="https://kit.fontawesome.com/948f369b19.js" crossorigin="anonymous"></script>
@@ -46,27 +47,30 @@ font-family: 'Source Sans Pro', sans-serif;-->
     </div>
   </nav>
   <!-- Page-specific (main) content here -->
-  <header>
-    <div class="image">
-      <img src="/images/profile-hex.png" alt="cartoon profile of a girl with long hair wearing a t-shirt">
-    </div>
-    <div>
-      <h2>Linh Nguyen</h2>
-    </div>
-  </header>
+  <div class="top-panel">
+    <header class="top-header">
+      <div class="image">
+        <img src="/images/profile-hex.png" alt="cartoon profile of a girl with long hair wearing a t-shirt">
+      </div>
+      <div>
+        <h2>Linh Nguyen</h2>
+      </div>
+    </header>
+    <form action="index.html" id="new_tweet_form" class="new_tweet">
+      <label for="tweet-text"><strong>What are you humming about?</strong></label>
+      <textarea name="text" id="tweet-text"></textarea>
+      <p class="error-message">Error: Your message is invalid. Please tweet again!</p>
+      <div>
+        <button type="submit">Tweet</button>
+        <output name="counter" class="counter" for="tweet-text">140</output>
+      </div>
+    </form>
+    <!-- <section class="new-tweet">
+     
+    </section> -->
+  </div>
   <main>
     <div class="wrapper">
-      <section class="new-tweet">
-        <form action="index.html" id="new_tweet_form" class="new_tweet">
-          <label for="tweet-text"><strong>What are you humming about?</strong></label>
-          <textarea name="text" id="tweet-text"></textarea>
-          <p class="error-message">Error: Your message is invalid. Please tweet again!</p>
-          <div>
-            <button type="submit">Tweet</button>
-            <output name="counter" class="counter" for="tweet-text">140</output>
-          </div>
-        </form>
-      </section>
       <section id="tweet-container">
         <!-- all tweets will be injected here -->
         <article class="display-tweet">
@@ -74,7 +78,7 @@ font-family: 'Source Sans Pro', sans-serif;-->
           <header>
             <div>
               <img src="/images/profile-hex.png" alt="cartoon profile of a girl with long hair wearing a t-shirt">
-              <p class="name">Linh</p>  
+              <p class="name">Linh</p>
             </div>
           </header>
           <p>This is my tweet: i hate this app!</p>

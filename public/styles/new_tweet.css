@@ -1,8 +1,8 @@
 .new_tweet {
-  margin-top: 10%;
-  margin-bottom: 10%;
+  margin: 10% 5% 10% 5%;
   display: flex;
   flex-direction: column;
+  width: 60%;
 }
 
 .new_tweet label {

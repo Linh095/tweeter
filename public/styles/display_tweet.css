@@ -6,6 +6,7 @@
   align-items: center;
   position: relative;
   margin-bottom: 10%;
+  padding: 5%;
 }
 
 a {
@@ -51,7 +52,7 @@ a {
   margin: 0 1em 0 1em;
   position: absolute;
   top: 50%;
-  left: 105px;
+  left: 70%;
   transform: translate(0, -50%);
 }
 
