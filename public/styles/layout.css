@@ -23,7 +23,6 @@ body {
 .top-panel {
   display: flex;
   justify-content: space-evenly;
-  margin: 7% 0 7% 0;
   margin-right: 15%;
   margin-left: 15%;
 }
@@ -32,7 +31,10 @@ body {
   margin-left: 15%;
   align-self: center;
 }
-
+    
+#tweet-container{
+  margin-top: 10%;
+}
 /* MEDIA QUERIES FOR RESPONSIVE DESIGN */
 
 @media (max-width: 900px) {

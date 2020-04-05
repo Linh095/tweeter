@@ -5,6 +5,8 @@
  */
 
 import characterCounter from "./composer-char-counter.js";
+import toggleNewTweet from "./toggle-new-tweet.js";
+
 // Function to run when page is ready
 
 //makes markup to be added to page's html when new tweet is posted
@@ -114,8 +116,11 @@ const onReady = () => {
   characterCounter();
   loadTweets();
   addNewTweet();
+  toggleNewTweet();
 };
 
+//hide toggle box in the beginning (only need to be done once);
+$(".new_tweet").hide(200);
 
 // Run when page is ready
 $(document).ready(onReady);

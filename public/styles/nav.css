@@ -13,6 +13,7 @@ nav {
 nav span {
   font-family: 'Bungee', cursive;
 }
+
 nav div {
   width: fit-content;
   margin: 0;
@@ -22,11 +23,20 @@ nav p {
   margin: 0 0 0.5em 0;
   width: 100%;
 }
+
+/* animation for red arrow span */
+@-webkit-keyframes mover {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
 nav i {
   display: inline-block;
   position: absolute;
   right: 50%;
-  transform: translate(50%)
+  transform: translate(50%);
+  color: red;
+  -webkit-animation: mover 2s infinite;
 }
 
 @media (max-width: 800px) {
