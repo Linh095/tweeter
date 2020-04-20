@@ -9,6 +9,12 @@ module.exports = function makeDataHelpers(db) {
 
     // Saves a tweet to `db`
     saveTweet: function(newTweet, callback) {
+      newTweet.user = {
+        "name": "Linh",
+        "avatars": "/images/profile-hex.png",
+        "handle": "@lnguyen"
+      };
+      console.log(newTweet);
       simulateDelay(() => {
         db.tweets.push(newTweet);
         callback(null, true);

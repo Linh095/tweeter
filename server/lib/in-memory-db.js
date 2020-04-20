@@ -6,16 +6,6 @@ const db = {
   tweets:[
     {
       "user": {
-        "name": "Descartes",
-        "avatars": "https://i.imgur.com/nlhLi3I.png",
-        "handle": "@rd" },
-      "content": {
-        "text": "Je pense , donc je suis"
-      },
-      "created_at": 961113959088
-    },
-    {
-      "user": {
         "name": "Newton",
         "avatars": "https://i.imgur.com/73hZDYK.png"
         ,
@@ -34,18 +24,8 @@ const db = {
       "content": {
         "text": "Je pense , donc je suis"
       },
-      "created_at": 1461113959088
+      "created_at": 961113959088
     },
-    {
-      "user": {
-        "name": "Descartes",
-        "avatars": "https://i.imgur.com/nlhLi3I.png",
-        "handle": "@rd" },
-      "content": {
-        "text": "Je pense , donc je suis"
-      },
-      "created_at": 1061113959088
-    }
   ]
 }
 
