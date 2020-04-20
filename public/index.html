@@ -58,7 +58,7 @@ font-family: 'Source Sans Pro', sans-serif;-->
         <h2>Linh Nguyen</h2>
       </div>
     </header>
-    <form action="index.html" id="new_tweet_form" class="new_tweet">
+    <form action="/server/routes/tweets.js" method="POST" id="new_tweet_form" class="new_tweet">
       <label for="tweet-text"><strong>What are you humming about?</strong></label>
       <textarea name="text" id="tweet-text"></textarea>
       <p class="error-message">Error: Your message is invalid. Please tweet again!</p>
@@ -71,28 +71,11 @@ font-family: 'Source Sans Pro', sans-serif;-->
   <main>
     <div class="wrapper">
       <section id="tweet-container">
-        <!-- all tweets will be injected here -->
-        <!-- <article class="display-tweet">
-          <a class="handle">@lnguyen</a>
-          <header>
-            <div>
-              <img src="/images/profile-hex.png" alt="cartoon profile of a girl with long hair wearing a t-shirt">
-              <p class="name">Linh</p>
-            </div>
-          </header>
-          <p>Tweeeeeeeeeeeeeetttttttttttttttttt</p>
-          <footer>
-            <h6 class="days-tweet">10 days ago</h6>
-            <div class="social-icons">
-              <i class="fab fa-font-awesome-flag"></i>
-              <i class="fas fa-retweet"></i>
-              <i class="fas fa-heart"></i>
-            </div>
-          </footer>
-        </article> -->
+
       </section>
     </div>
   </main>
+  
 
 </body>
 

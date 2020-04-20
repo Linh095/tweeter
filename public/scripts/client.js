@@ -42,6 +42,7 @@ const daysAgoTweet = function (time_created) {
   const daysDifference = Math.floor(difference / 1000 / 60 / 60 / 24);
   return daysDifference;
 };
+
 const escape =  function(str) {
   let div = document.createElement('div');
   div.appendChild(document.createTextNode(str));
@@ -50,7 +51,6 @@ const escape =  function(str) {
 
 //formats tweet from text entered into the new_tweet form
 const formatTweetByLinh = function (text) {
-  //NEED TO CHANGE THIS TO GET USER INFORMATION FROM COOKIES LATER
   const dateCreated = Date.now(); //returns 13 digit timestamp
   const tweet_data = {
     "user": {
@@ -76,22 +76,43 @@ const checkValidText = function (text) {
   }
 };
 
+//render new tweet without adding to the database
 const addNewTweet = function () {
-  $('#new_tweet_form').submit(function (event) {
+  $('#new_tweet_form').submit(
+    function (event) {
     event.preventDefault();
     const data = $(this).serializeArray();
     const new_tweet = data[0].value;
+
     if (checkValidText(new_tweet)) {
+
       $('.error-message').removeClass("error");
       const formated_object = formatTweetByLinh(new_tweet);
+
       const html_element = createTweetElement(formated_object);
+
+      //TRYING TO ADD TO DATABASE
+      $.ajax({
+        type: "POST",
+        url: "/tweets",
+        data: data,
+        success: console.log("successfully added to db", data),
+        dataType: null
+      });
+
       $('#new_tweet_form')[0].reset();
+
       $('#tweet-container').prepend(html_element);
     } else {
       $('.error-message').addClass("error");
     }
+
   });
 };
+//add new tweet to database
+// const newTweetData = function (tweet) {
+//   $.ajax('/tweet', {method:})
+// }
 
 //adds tweet to tweet-container part of homepage
 const renderTweets = function (data) {

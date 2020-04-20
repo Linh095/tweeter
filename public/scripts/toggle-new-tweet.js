@@ -6,7 +6,8 @@
 // }
 
 let hidenTextArea = false;
-const toggleNewTweet = $(".write-span").click(function () {
+const toggleNewTweet = () => {
+  $(".write-span").click(function () {
 
   if (hidenTextArea === false) {
     $(".new_tweet").show(200)
@@ -17,5 +18,6 @@ const toggleNewTweet = $(".write-span").click(function () {
     hidenTextArea = false;
   }
 });
+} 
 
 export default toggleNewTweet;
